@@ -29,11 +29,24 @@ function creteImgCard(galleryItems) {
 };
 
 function onImgContainerClick(event) {
+  
   if (!event.target.classList.contains('gallery__image')) {
     return;
-  }
- 
-  // console.log(event.target.dataset.source);
-  return event.target.dataset.source;
+  };
+  const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+`);
+
+
+  instance.show();
 
 };
+
+// const openModal = this.classList.contains('gallery');
+// console.log(openModal)
+// function onEscCloseModal(event) {
+//   const openModal = document.querySelector('.basicLightbox--visible');
+
+//   if ()
+//   window.addEventListener('keydown', onEscCloseModal)
+// }
